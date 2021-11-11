@@ -1,0 +1,5 @@
+$HOME/.config/polybar/launch.sh &
+picom --config ~/.config/picom/picom.conf &
+nitrogen --restore &
+rofi -show run &
+mpd &
