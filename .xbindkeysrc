@@ -42,8 +42,8 @@
 
 #Open xbindkeys_config
 "xbindkeys_config"
-    m:0x5 + c:25
-    Control+Shift + w 
+    m:0xc + c:32
+    Control+Alt + o 
 
 # specify a mouse button
 "xterm"
@@ -51,13 +51,18 @@
 
 #Open terminal
 "kitty"
-    m:0x0 + c:96
-    F12 
+    m:0x4 + c:96
+    Control + F12 
 
 #Take screenshot
-"gscreenshot"
+"escrotum -C"
     m:0x0 + c:107
     Print 
+
+#Take screenshot and save immidiately
+"gscreenshot -f ~/Pictures"
+    m:0x5 + c:107
+    Control+Shift + Print 
 
 #Take screenshot of an area
 "escrotum -s -C"
