@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #40000000
+background = #603b4252
 background-alt = #444
 foreground-alt = #cccccc
 primary = #fff
@@ -298,7 +298,7 @@ animation-discharging-framerate = 750
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 80
 
 format = <ramp> <label>
 format-underline = #ffb5b5

@@ -6,6 +6,7 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
+:set termguicolors
 
 lua require('plugins')
 lua << END
@@ -46,3 +47,9 @@ require'lualine'.setup {
 }
 require'lspconfig'.ccls.setup{}
 END
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+let g:vimnspector_enable_mappings = 'VISUAL_STUDIO'
+

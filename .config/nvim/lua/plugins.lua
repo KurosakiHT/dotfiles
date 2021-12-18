@@ -14,7 +14,7 @@ return require('packer').startup(function()
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   -- Post-install/update hook with call of vimscript function with argument
-  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end } 
 
   -- Multiples icon for various plugins
   use 'kyazdani42/nvim-web-devicons'
@@ -32,8 +32,9 @@ return require('packer').startup(function()
   use 'nvim-treestter/nvim-treesitter'
 
   --File system explorer
-  use 'preservim/nerdtree'
-
+  use {'preservim/nerdtree',
+  requires = {{'Xuyuanp/nerdtree-git-plugin', opt = true},{'kyazdan142/nvim-web-devicons', opt = true},{'tiagofumo/vim-nerdtree-syntax-highlight', opt = true},{'scrooloose/nerdtree-project-plugin', opt = true},{'PhilRunninger/nerdtree-buffer-ops', opt = true}
+  }}
   --Intergrated terminal
   use 'tc50cal/vim-terminal'
 
@@ -48,4 +49,19 @@ return require('packer').startup(function()
 
   --Syntax highlighting for multiplies languages
   use 'sheerun/vim-polyglot'
+
+  --Git status for NERDTree
+  use 'Xuyuanp/nerdtree-git-plugin'
+
+  --Syntax highlighting for NERDTree
+  use 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+  --Save and restore NERDTree state
+  use 'scrooloose/nerdtree-project-plugin'
+
+  --Highlight selected file in NERDTree
+  use 'PhilRunninger/nerdtree-buffer-ops'
+
+  --Debugger for multiplie languages
+  use 'puremourning/vimspector'
 end)

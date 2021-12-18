@@ -40,8 +40,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Afterpiece</name>
-    <titleLayout>NLIMC</titleLayout>
+    <name>Raven-Cyan</name>
+    <titleLayout>LIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -177,42 +177,70 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="C-A-Left">
-      <action name="GoToDesktop"/>
+      <action name="MoveToEdgeWest"/>
     </keybind>
     <keybind key="C-A-Right">
-      <action name="GoToDesktop"/>
+      <action name="MoveToEdgeEast"/>
     </keybind>
     <keybind key="C-A-Up">
-      <action name="GoToDesktop"/>
+      <action name="MoveToEdgeNorth"/>
     </keybind>
     <keybind key="C-A-Down">
-      <action name="GoToDesktop"/>
+      <action name="MoveToEdgeSouth"/>
+    </keybind>
+    <keybind key="C-A-equal">
+      <action name="ResizeRelative">
+        <right>24</right>
+        <bottom>24</bottom>
+      </action>
+    </keybind>
+    <keybind key="C-A-minus">
+      <action name="ResizeRelative">
+        <right>-24</right>
+        <bottom>-24</bottom>
+      </action>
+    </keybind>
+    <keybind key="A-W-equal">
+      <action name="ResizeRelative">
+        <left>24</left>
+        <top>24</top>
+      </action>
+    </keybind>
+    <keybind key="A-W-minus">
+      <action name="ResizeRelative">
+        <left>-24</left>
+        <top>-24</top>
+      </action>
     </keybind>
     <keybind key="S-A-Left">
-      <action name="SendToDesktop"/>
+      <action name="ToggleShade"/>
     </keybind>
     <keybind key="S-A-Right">
-      <action name="SendToDesktop">
+      <action name="ToggleAlwaysOnTop"/>
+    </keybind>
+    <keybind key="S-A-Up">
+      <action name="ToggleMaximizeVert"/>
+    </keybind>
+    <keybind key="S-A-Down">
+      <action name="ToggleMaximizeHorz"/>
+    </keybind>
+    <keybind key="W-F1">
+      <action name="Desktop"/>
+    </keybind>
+    <keybind key="W-F2">
+      <action name="Desktop">
         <desktop>2</desktop>
       </action>
     </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop"/>
-    </keybind>
-    <keybind key="W-F1">
-      <action name="GoToDesktop"/>
-    </keybind>
-    <keybind key="W-F2">
-      <action name="GoToDesktop"/>
-    </keybind>
     <keybind key="W-F3">
-      <action name="GoToDesktop"/>
+      <action name="Desktop">
+        <desktop>3</desktop>
+      </action>
     </keybind>
     <keybind key="W-F4">
-      <action name="GoToDesktop"/>
+      <action name="Desktop">
+        <desktop>4</desktop>
+      </action>
     </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
@@ -260,20 +288,33 @@
     <keybind key="W-S-Down">
       <action name="DirectionalCycleWindows"/>
     </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>thunar</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>Konqueror</name>
-        </startupnotify>
-      </action>
-    </keybind>
-    <keybind key="C-A-e">
+    <keybind key="C-A-d">
       <action name="ToggleDecorations"/>
     </keybind>
-    <keybind key="S-C-space">
+    <keybind key="S-A-z">
       <action name="DesktopNext"/>
+    </keybind>
+    <keybind key="S-C-z">
+      <action name="DesktopPrevious"/>
+    </keybind>
+    <keybind key="A-m">
+      <action name="Move"/>
+    </keybind>
+    <keybind key="A-W-Right">
+      <action name="MoveRelative">
+        <x>24</x>
+      </action>
+    </keybind>
+    <keybind key="A-W-Left">
+      <action name="MoveRelative">
+        <x>-24</x>
+      </action>
+    </keybind>
+    <keybind key="A-W-Up">
+      <action name="Focus"/>
+    </keybind>
+    <keybind key="A-W-Down">
+      <action name="Focus"/>
     </keybind>
   </keyboard>
   <mouse>

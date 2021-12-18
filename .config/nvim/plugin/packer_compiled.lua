@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -94,6 +94,21 @@ _G.packer_plugins = {
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
   },
+  ["nerdtree-buffer-ops"] = {
+    loaded = true,
+    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nerdtree-buffer-ops",
+    url = "https://github.com/PhilRunninger/nerdtree-buffer-ops"
+  },
+  ["nerdtree-git-plugin"] = {
+    loaded = true,
+    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
+    url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
+  },
+  ["nerdtree-project-plugin"] = {
+    loaded = true,
+    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nerdtree-project-plugin",
+    url = "https://github.com/scrooloose/nerdtree-project-plugin"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -124,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/vim-matchup",
     url = "https://github.com/andymass/vim-matchup"
   },
+  ["vim-nerdtree-syntax-highlight"] = {
+    loaded = true,
+    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
+    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
+  },
   ["vim-polyglot"] = {
     loaded = true,
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/vim-polyglot",
@@ -133,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/vim-terminal",
     url = "https://github.com/tc50cal/vim-terminal"
+  },
+  vimspector = {
+    loaded = true,
+    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/vimspector",
+    url = "https://github.com/puremourning/vimspector"
   }
 }
 
