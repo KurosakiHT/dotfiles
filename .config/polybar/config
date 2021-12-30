@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #603b4252
+background = #403b4252
 background-alt = #444
 foreground-alt = #cccccc
 primary = #fff
@@ -109,8 +109,8 @@ label-unmounted-foreground = ${colors.foreground-alt}
 	
 [module/mpd]
 type = internal/mpd
-host = ::1
-port = 1337
+host = localhost
+port = 6600
 interval = 1
 format-online = <label-song> <label-time>
 format-online-foreground = #96faf0
