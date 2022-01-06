@@ -51,8 +51,8 @@
 
 #Open terminal
 "kitty"
-    m:0x4 + c:96
-    Control + F12 
+    m:0xc + c:28
+    Control+Alt + t 
 
 #Take screenshot
 "escrotum -C"
@@ -95,9 +95,19 @@
     XF86AudioRaiseVolume 
 
 #Run a new app
-"rofi -show run"
+"rofi -show drun"
     m:0x5 + c:41
     Control+Shift + f 
+
+#Disable touchpad
+"xinput disable 'ELAN1301:00 04F3:30EF Touchpad'"
+    m:0x0 + c:199
+    XF86TouchpadToggle 
+
+#Enable touchpad
+"xinput enable 'ELAN1301:00 04F3:30EF Touchpad'"
+    m:0x8 + c:199
+    Alt + XF86TouchpadToggle 
 
 #
 # End of xbindkeys configuration
