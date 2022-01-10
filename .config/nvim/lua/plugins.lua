@@ -64,4 +64,14 @@ return require('packer').startup(function()
 
   --Debugger for multiplie languages
   use 'puremourning/vimspector'
+
+  --Line number
+  use 'IMOKURI/line-number-interval.nvim'
+
+  --Nightfox colorscheme
+  use 'EdenEast/nightfox.nvim'
+
+  --CSS colors
+  use 'ap/vim-css-color'
+  
 end)

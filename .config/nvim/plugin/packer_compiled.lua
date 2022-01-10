@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/firenvim",
     url = "https://github.com/glacambre/firenvim"
   },
+  ["line-number-interval.nvim"] = {
+    loaded = true,
+    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/line-number-interval.nvim",
+    url = "https://github.com/IMOKURI/line-number-interval.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -109,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nerdtree-project-plugin",
     url = "https://github.com/scrooloose/nerdtree-project-plugin"
   },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -133,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/vim-closer",
     url = "https://github.com/9mm/vim-closer"
+  },
+  ["vim-css-color"] = {
+    loaded = true,
+    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/vim-css-color",
+    url = "https://github.com/ap/vim-css-color"
   },
   ["vim-matchup"] = {
     loaded = true,
