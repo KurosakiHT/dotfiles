@@ -5,6 +5,4 @@ export QT4_IM_MODULE=ibus
 export CLUTTER_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
 export QT_QPA_PLATFORMTHEME=gtk2
-mpd-discord-rpc &
-lxpolkit &
-xbindkeys &
+export EDITOR=nvim
