@@ -10,6 +10,11 @@
 :set mouse=a
 :set termguicolors
 
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 lua require('plugins')
 lua << END
 require'nvim-treesitter.configs'.setup {
@@ -53,7 +58,7 @@ require('nightfox').load('nightfox')
 local nightfox = require('nightfox')
 nightfox.setup(
 {
-  fox = "duskfox", -- Which fox style should be applied
+  fox = "nordfox", -- Which fox style should be applied
   transparent = true, -- Disable setting the background color
   alt_nc = false, -- Non current window bg to alt color see `hl-NormalNC`
   terminal_colors = true, -- Configure the colors used when opening :terminal
@@ -81,3 +86,5 @@ let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif

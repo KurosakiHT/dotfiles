@@ -35,8 +35,6 @@ return require('packer').startup(function()
   use {'preservim/nerdtree',
   requires = {{'Xuyuanp/nerdtree-git-plugin', opt = true},{'kyazdan142/nvim-web-devicons', opt = true},{'tiagofumo/vim-nerdtree-syntax-highlight', opt = true},{'scrooloose/nerdtree-project-plugin', opt = true},{'PhilRunninger/nerdtree-buffer-ops', opt = true}
   }}
-  --Intergrated terminal
-  use 'tc50cal/vim-terminal'
 
   --Config for LSP
   use 'neovim/nvim-lspconfig'
