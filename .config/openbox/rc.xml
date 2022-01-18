@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>15</strength>
@@ -176,74 +175,41 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <keybind key="C-A-Left">
-      <action name="MoveToEdgeWest"/>
-    </keybind>
-    <keybind key="C-A-Right">
-      <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="C-A-Up">
-      <action name="MoveToEdgeNorth"/>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="MoveToEdgeSouth"/>
-    </keybind>
-    <keybind key="C-A-equal">
-      <action name="ResizeRelative">
-        <right>24</right>
-        <bottom>24</bottom>
-      </action>
-    </keybind>
-    <keybind key="C-A-minus">
-      <action name="ResizeRelative">
-        <right>-24</right>
-        <bottom>-24</bottom>
-      </action>
-    </keybind>
-    <keybind key="A-W-equal">
-      <action name="ResizeRelative">
-        <left>24</left>
-        <top>24</top>
-      </action>
-    </keybind>
-    <keybind key="A-W-minus">
-      <action name="ResizeRelative">
-        <left>-24</left>
-        <top>-24</top>
-      </action>
-    </keybind>
-    <keybind key="S-A-Left">
-      <action name="ToggleShade"/>
-    </keybind>
-    <keybind key="S-A-Right">
-      <action name="ToggleAlwaysOnTop"/>
-    </keybind>
-    <keybind key="S-A-Up">
-      <action name="ToggleMaximizeVert"/>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="ToggleMaximizeHorz"/>
-    </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-1">
       <action name="Desktop"/>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-2">
       <action name="Desktop">
         <desktop>2</desktop>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-3">
       <action name="Desktop">
         <desktop>3</desktop>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-4">
       <action name="Desktop">
         <desktop>4</desktop>
       </action>
     </keybind>
-    <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
+    <keybind key="W-exclam">
+      <action name="SendToDesktop"/>
+    </keybind>
+    <keybind key="W-at">
+      <action name="SendToDesktop">
+        <desktop>2</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-numbersign">
+      <action name="SendToDesktop">
+        <desktop>3</desktop>
+      </action>
+    </keybind>
+    <keybind key="W-dollar">
+      <action name="SendToDesktop">
+        <desktop>4</desktop>
+      </action>
     </keybind>
     <keybind key="A-F4">
       <action name="Close"/>
@@ -258,11 +224,8 @@
         <menu>client-menu</menu>
       </action>
     </keybind>
-    <keybind key="C-space">
-      <action name="MaximizeFull"/>
-    </keybind>
-    <keybind key="C-Escape">
-      <action name="UnmaximizeFull"/>
+    <keybind key="W-u">
+      <action name="ToggleMaximizeFull"/>
     </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow"/>
@@ -288,33 +251,23 @@
     <keybind key="W-S-Down">
       <action name="DirectionalCycleWindows"/>
     </keybind>
-    <keybind key="C-A-d">
+    <keybind key="S-W-d">
       <action name="ToggleDecorations"/>
     </keybind>
-    <keybind key="S-A-z">
+    <keybind key="S-W-Right">
       <action name="DesktopNext"/>
     </keybind>
-    <keybind key="S-C-z">
+    <keybind key="S-W-Left">
       <action name="DesktopPrevious"/>
     </keybind>
-    <keybind key="A-m">
+    <keybind key="W-m">
       <action name="Move"/>
     </keybind>
-    <keybind key="A-W-Right">
-      <action name="MoveRelative">
-        <x>24</x>
-      </action>
+    <keybind key="S-W-r">
+      <action name="Reconfigure"/>
     </keybind>
-    <keybind key="A-W-Left">
-      <action name="MoveRelative">
-        <x>-24</x>
-      </action>
-    </keybind>
-    <keybind key="A-W-Up">
-      <action name="Focus"/>
-    </keybind>
-    <keybind key="A-W-Down">
-      <action name="Focus"/>
+    <keybind key="S-W-e">
+      <action name="Exit"/>
     </keybind>
   </keyboard>
   <mouse>

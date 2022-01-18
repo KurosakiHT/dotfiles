@@ -19,31 +19,31 @@ proportion = 0.1
 # Key symbols can be found by pressing keys using the 'xev' program
 
 # Tile the current workspace.
-tile = "Control-Mod4-t"
+tile = "Shift-Mod4-t"
 
 # Untile the current workspace.
-untile = "Control-Mod4-u"
+untile = "Shift-Mod4-u"
 
 # Make the active window as master.
-make_active_window_master = "Control-Mod4-m"
+make_active_window_master = "Shift-Mod4-m"
 
 # Increase the number of masters.
-increase_master = "Control-Mod4-i"
+increase_master = "Shift-Mod4-i"
 
 # Decrease the number of masters.
-decrease_master = "Control-Mod4-d"
+decrease_master = "Shift-Mod4-d"
 
 # Cycles through the available layouts.
-switch_layout = "Control-Mod4-s"
+switch_layout = "Shift-Mod4-s"
 
 # Moves focus to the next window.
-next_window = "Control-Mod4-n"
+next_window = "Shift-Mod4-n"
 
 # Moves focus to the previous window.
-previous_window = "Control-Mod4-p"
+previous_window = "Shift-Mod4-p"
 
 # Increases the size of the master windows.
-increment_master = "Control-bracketright"
+increment_master = "Shift-bracketright"
 
 # Decreases the size of the master windows.
-decrement_master = "Control-bracketleft"
+decrement_master = "Shift-bracketleft"

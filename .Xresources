@@ -13,7 +13,7 @@ XTerm.vt100.translations: #override \n\
 XTerm.vt100.saveLines: 4096
 XTerm.vt100.geometry: 90x24
 XTerm.vt100.foreground: rgb:d9/d9/d9
-XTerm.vt100.background: rgb:54/54/54
+XTerm.vt100.background: rgb:3b/42/52
 XTerm.vt100.color0: rgb:35/35/35
 XTerm.vt100.color1: rgb:e6/45/69
 XTerm.vt100.color2: rgb:e4/85/9a

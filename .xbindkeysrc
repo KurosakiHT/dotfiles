@@ -35,24 +35,15 @@
 
 
 
-#Show xbindkeys
-"xbindkeys_show"
-    m:0x5 + c:24
-    Control+Shift + q 
-
 #Open xbindkeys_config
 "xbindkeys_config"
-    m:0xc + c:32
-    Control+Alt + o 
-
-# specify a mouse button
-"xterm"
-   control + b:2
+    m:0x41 + c:54
+    Shift+Mod4 + c 
 
 #Open terminal
 "kitty"
-    m:0xc + c:28
-    Control+Alt + t 
+    m:0x40 + c:36
+    Mod4 + Return 
 
 #Take screenshot
 "escrotum -C"
@@ -60,9 +51,9 @@
     Print 
 
 #Take screenshot and save immidiately
-"gscreenshot -f ~/Pictures"
-    m:0x5 + c:107
-    Control+Shift + Print 
+"gscreenshot -f ~/Pictures/Screenshots"
+    m:0x41 + c:107
+    Shift+Mod4 + Print 
 
 #Take screenshot of an area
 "escrotum -s -C"
@@ -96,8 +87,8 @@
 
 #Run a new app
 "rofi -show drun"
-    m:0x5 + c:41
-    Control+Shift + f 
+    m:0x40 + c:27
+    Mod4 + r 
 
 #Disable touchpad
 "xinput disable 'ELAN1301:00 04F3:30EF Touchpad'"
