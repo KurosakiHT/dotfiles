@@ -11,5 +11,4 @@ nitrogen --restore &
 xbindkeys &
 mpd-discord-rpc &
 lxpolkit &
-nm-applet &
 light-locker &
