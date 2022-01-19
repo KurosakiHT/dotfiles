@@ -6,3 +6,10 @@ export CLUTTER_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
 export QT_QPA_PLATFORMTHEME=gtk2
 export EDITOR=nvim
+picom &
+nitrogen --restore &
+xbindkeys &
+mpd-discord-rpc &
+lxpolkit &
+nm-applet &
+light-locker &
