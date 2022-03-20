@@ -83,6 +83,10 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+    Key(
+        [mod, "shift"], "f",
+        lazy.window.toggle_floating(),
+        desc='toggle floating'),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -104,14 +108,16 @@ for i in groups:
             desc="Exit Qtile"),
     ])
 
+layout_theme = {
+    "border_focus": "88c0d0",
+    "border_normal": "3b4252",
+    "border_width": 5
+}
+
 layouts = [
-    layout.Columns(
-        border_focus_stack=['#88c0d0', '#4c566a'], 
-        border_focus='#88c0d0',
-        border_normal='#4c566a',
-        border_width=3
-    ),
-    layout.Max(),
+    layout.Columns(**layout_theme),
+    layout.Max(**layout_theme),
+    layout.Floating(**layout_theme)
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -137,11 +143,10 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayoutIcon(),
                 widget.GroupBox(
                     inactive='81a1c1',
                     hide_unused=True,
-                    rounded=False,
+                    rounded=True,
                     this_current_screen_border='88c0d0',
                     this_screen_border='88c0d0',
                 ),
@@ -154,8 +159,17 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
+                widget.Net(
+                    format='NET {down} ↓↑ {up}',
+                    padding=5,
+                ),
                 widget.CPU(
                     format='CPU {load_percent}%',
+                    padding=5,
+                ),
+                widget.NvidiaSensors(
+                    format='GPU/CPU T {temp}°C',
+                    foreground_alert='f7768e',
                     padding=5,
                 ),
                 widget.ThermalZone(
@@ -220,7 +234,8 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
-])
+    Match(wm_class='pqiv'),
+    ], **layout_theme)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True

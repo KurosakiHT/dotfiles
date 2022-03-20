@@ -10,5 +10,6 @@ picom &
 nitrogen --restore &
 xbindkeys &
 mpd-discord-rpc &
-lxpolkit &
 light-locker &
+ibus-daemon -drx
+xfce4-power-manager &
