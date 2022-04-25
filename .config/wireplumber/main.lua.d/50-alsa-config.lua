@@ -4,12 +4,16 @@ alsa_monitor.properties = {
   -- it requires that the PipeWire JACK replacement libraries are
   -- not used by the session manager, in order to be able to
   -- connect to the real JACK server.
-  ["alsa.jack-device"] = true,
+  --["alsa.jack-device"] = false,
 
   -- Reserve devices via org.freedesktop.ReserveDevice1 on D-Bus
+  ["alsa.reserve"] = true,
   ["alsa.reserve"] = false,
   --["alsa.reserve.priority"] = -20,
   --["alsa.reserve.application-name"] = "WirePlumber",
+
+  -- Enables MIDI functionality
+  ["alsa.midi"] = true,
 
   -- Enables monitoring of alsa MIDI devices
   ["alsa.midi.monitoring"] = true,
@@ -17,6 +21,19 @@ alsa_monitor.properties = {
 
 alsa_monitor.rules = {
   -- An array of matches/actions to evaluate.
+  -- 
+  -- If you want to disable some devices or nodes, you can apply properties per device as the following example.
+  -- The name can be found by running pw-cli ls Device, or pw-cli dump Device
+  --{
+  --  matches = {
+  --    {
+  --      { "device.name", "matches", "name_of_some_disabled_card" },
+  --    },
+  --  },
+  --  apply_properties = {
+  --    ["device.disabled"] = true,
+  --  },
+  --}
   {
     -- Rules for matching a device or node. It is an array of
     -- properties that all need to match the regexp. If any of the
@@ -89,11 +106,13 @@ alsa_monitor.rules = {
       --["audio.channels"]         = 2,
       --["audio.format"]           = "S16LE",
       --["audio.rate"]             = 44100,
+      --["audio.allowed-rates"]    = "32000,96000"
       --["audio.position"]         = "FL,FR",
       ["api.alsa.period-size"]   = 1024,
       ["api.alsa.headroom"]      = 0,
       --["api.alsa.disable-mmap"]  = false,
       --["api.alsa.disable-batch"] = false,
+      --["session.suspend-timeout-seconds"] = 5,  -- 0 disables suspend
     },
   },
 }

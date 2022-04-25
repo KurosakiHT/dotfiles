@@ -177,6 +177,7 @@ screens = [
                     crit=80,
                     format_crit='{temp}°C',
                     fcolor_crit='f7768e',
+                    zone='/sys/class/thermal/thermal_zone3/temp',
                     padding=5,
                 ),
                 widget.Memory(
@@ -235,6 +236,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
     Match(wm_class='pqiv'),
+    Match(wm_class='zoom'),
     ], **layout_theme)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
