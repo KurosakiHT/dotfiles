@@ -56,6 +56,16 @@ keys = [
         desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
+    #Flip windows between vertical/horizontal
+    Key([mod, "mod1"], "j", lazy.layout.flip_down(),
+        desc="Flip window down"),
+    Key([mod, "mod1"], "k", lazy.layout.flip_up(),
+        desc="Flip window up"),
+    Key([mod, "mod1"], "h", lazy.layout.flip_left(),
+        desc="Flip window left"),
+    Key([mod, "mod1"], "l", lazy.layout.flip_right(),
+        desc="Flip window right"),
+
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     Key([mod, "control"], "h", lazy.layout.grow_left(),
@@ -161,18 +171,33 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
+                widget.Sep(
+                    foreground='81a1c1',
+                    linewidth=2,
+                    padding=4,
+                    size_percent=60,
+                ),
                 widget.Net(
                     format='NET {down} ↓↑ {up}',
-                    padding=5,
+                ),
+                widget.Sep(
+                    foreground='81a1c1',
+                    linewidth=2,
+                    padding=4,
+                    size_percent=60,
                 ),
                 widget.CPU(
                     format='CPU {load_percent}%',
-                    padding=5,
+                ),
+                widget.Sep(
+                    foreground='81a1c1',
+                    linewidth=2,
+                    padding=4,
+                    size_percent=60,
                 ),
                 widget.NvidiaSensors(
                     format='GPU/CPU T {temp}°C',
                     foreground_alert='f7768e',
-                    padding=5,
                 ),
                 widget.ThermalZone(
                     high=60,
@@ -180,31 +205,49 @@ screens = [
                     format_crit='{temp}°C',
                     fcolor_crit='f7768e',
                     zone='/sys/class/thermal/thermal_zone3/temp',
-                    padding=5,
+                ),
+                widget.Sep(
+                    foreground='81a1c1',
+                    linewidth=2,
+                    padding=4,
+                    size_percent=60,
                 ),
                 widget.Memory(
                     format='MEM {MemUsed: .2f}{mm}/{MemTotal: .0f}{mm}',
                     measure_mem='G',
-                    padding=5,
+                ),
+                widget.Sep(
+                    foreground='81a1c1',
+                    linewidth=2,
+                    padding=4,
+                    size_percent=60,
                 ),
                widget.Backlight(
                     backlight_name='intel_backlight',
                     format='BL/VOL {percent:2.0%}',
-                    padding=5,
                 ),
                 widget.PulseVolume(
                     update_interval=0.05,
-                    padding=5,
+                ),
+                widget.Sep(
+                    foreground='81a1c1',
+                    linewidth=2,
+                    padding=4,
+                    size_percent=60,
                 ),
                 widget.Battery(
                     format='BAT {char} {percent:2.0%}',
                     low_percentage=0.15,
                     low_foreground='bf616a',
-                    padding=5,
+                ),
+                widget.Sep(
+                    foreground='81a1c1',
+                    linewidth=2,
+                    padding=4,
+                    size_percent=60,
                 ),
                 widget.Clock(
                     format='%Y/%m/%d %a %H:%M:%S',
-                    padding=5,
                 ),
             ],
             24,
