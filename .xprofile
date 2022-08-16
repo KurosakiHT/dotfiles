@@ -6,6 +6,7 @@ export CLUTTER_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
 export QT_QPA_PLATFORMTHEME=gtk2
 export EDITOR=nvim
+lxpolkit &
 picom &
 nitrogen --restore &
 xbindkeys &
@@ -13,3 +14,6 @@ mpd-discord-rpc &
 light-locker &
 ibus-daemon -drx
 xfce4-power-manager &
+manjaroptimus-appindicator &
+nm-applet &
+gnome-keyring-daemon -d &
