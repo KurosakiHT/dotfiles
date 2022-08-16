@@ -1,29 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 from typing import List  # noqa: F401
 
 from libqtile import bar, layout, widget
@@ -121,14 +95,16 @@ for i in groups:
 layout_theme = {
     "border_focus": "88c0d0",
     "border_normal": "3b4252",
-    "border_width": 5
+    "border_width": 3
 }
 
 layouts = [
     layout.Bsp(
         fair=False,
+        margin=4,
+        margin_on_single=5,
         **layout_theme),
-    layout.Columns(**layout_theme),
+    #layout.Columns(**layout_theme),
     layout.Max(**layout_theme),
     layout.Floating(**layout_theme)
     # Try more layouts by unleashing below layouts.
@@ -162,14 +138,18 @@ screens = [
                     this_current_screen_border='88c0d0',
                     this_screen_border='88c0d0',
                 ),
+                widget.CurrentScreen(
+                    active_color='a3be8c',
+                    inactive_color='bf616a',
+                ),
+                widget.Sep(
+                    foreground='81a1c1',
+                    linewidth=2,
+                    padding=4,
+                    size_percent=60,
+                ),
                 widget.Prompt(),
                 widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
                 widget.Systray(),
                 widget.Sep(
                     foreground='81a1c1',
@@ -177,8 +157,8 @@ screens = [
                     padding=4,
                     size_percent=60,
                 ),
-                widget.Net(
-                    format='NET {down} ↓↑ {up}',
+                widget.CurrentLayoutIcon(
+                    scale=0.6,
                 ),
                 widget.Sep(
                     foreground='81a1c1',
