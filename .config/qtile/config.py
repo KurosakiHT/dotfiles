@@ -149,7 +149,11 @@ screens = [
                     size_percent=60,
                 ),
                 widget.Prompt(),
-                widget.WindowName(),
+                widget.TaskList(
+                    border='8cc0d0',
+                    unfocused_border='3b4252',
+                    borderwidth=3,
+                ),
                 widget.Systray(),
                 widget.Sep(
                     foreground='81a1c1',
@@ -262,6 +266,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='pinentry'),  # GPG key password entry
     Match(wm_class='pqiv'),
     Match(wm_class='zoom'),
+    Match(wm_class='megasync'),
     ], **layout_theme)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
