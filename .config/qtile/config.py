@@ -153,6 +153,9 @@ screens = [
                     border='8cc0d0',
                     unfocused_border='3b4252',
                     borderwidth=3,
+                    txt_floating='🗗 ',
+                    txt_maximized='🗖 ',
+                    txt_minimized='🗕 ',
                 ),
                 widget.Systray(),
                 widget.Sep(
