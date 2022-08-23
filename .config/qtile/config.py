@@ -71,6 +71,10 @@ keys = [
         [mod, "shift"], "f",
         lazy.window.toggle_floating(),
         desc='toggle floating'),
+    Key(
+        [mod, "mod1"], "Return", lazy.window.toggle_fullscreen(),
+        desc="toggle fullscreen"
+    )
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -256,7 +260,7 @@ mouse = [
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
-bring_front_click = False
+bring_front_click = True
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
