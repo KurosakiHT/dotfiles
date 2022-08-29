@@ -124,7 +124,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='JetBrainsMonoExtraBold Nerd Font',
+    font='JetBrainsMono Nerd Font ExtraBold',
     fontsize=12,
     padding=2,
     background='#2e3440'
@@ -178,7 +178,12 @@ screens = [
                     size_percent=60,
                 ),
                 widget.CPU(
-                    format='CPU {load_percent}%',
+                    format='CPU U/T {load_percent}%',
+                ),
+                widget.ThermalSensor(
+                    threshold=70,
+                    tag_sensor='Core 0',
+                    foreground_alert='f7768e',
                 ),
                 widget.Sep(
                     foreground='81a1c1',
@@ -187,15 +192,8 @@ screens = [
                     size_percent=60,
                 ),
                 widget.NvidiaSensors(
-                    format='GPU/CPU T {temp}°C',
+                    format='GPU T {temp}°C',
                     foreground_alert='f7768e',
-                ),
-                widget.ThermalZone(
-                    high=60,
-                    crit=80,
-                    format_crit='{temp}°C',
-                    fcolor_crit='f7768e',
-                    zone='/sys/class/thermal/thermal_zone3/temp',
                 ),
                 widget.Sep(
                     foreground='81a1c1',
@@ -215,10 +213,18 @@ screens = [
                 ),
                widget.Backlight(
                     backlight_name='intel_backlight',
-                    format='BL/VOL {percent:2.0%}',
+                    format='BL {percent:2.0%}',
+                    step=1,
                 ),
-                widget.PulseVolume(
+                widget.Sep(
+                    foreground='81a1c1',
+                    linewidth=2,
+                    padding=4,
+                    size_percent=60,
+                ),
+                widget.Volume(
                     update_interval=0.05,
+                    fmt='VOL {}',
                 ),
                 widget.Sep(
                     foreground='81a1c1',
