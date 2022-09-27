@@ -80,20 +80,15 @@
     m:0x0 + c:123
     XF86AudioRaiseVolume 
 
-#Disable touchpad
-"xinput disable 'ELAN1301:00 04F3:30EF Touchpad'"
-    m:0x0 + c:199
-    XF86TouchpadToggle 
-
-#Enable touchpad
-"xinput enable 'ELAN1301:00 04F3:30EF Touchpad'"
-    m:0x8 + c:199
-    Alt + XF86TouchpadToggle 
-
 #Run specific application
 "rofi -show drun"
     m:0x40 + c:40
     Mod4 + d 
+
+#Open emoji picker
+"emoji-picker"
+    m:0x40 + c:60
+    Mod4 + period 
 
 #
 # End of xbindkeys configuration
