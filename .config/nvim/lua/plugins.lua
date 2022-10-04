@@ -71,5 +71,8 @@ return require('packer').startup(function()
 
   --CSS colors
   use 'ap/vim-css-color'
+
+  --Snippets
+  use 'norcalli/snippets.nvim'
   
 end)

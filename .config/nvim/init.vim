@@ -1,5 +1,4 @@
 :set number
-:set relativenumber
 :set cursorline
 :set cursorlineopt=number
 :set autoindent
