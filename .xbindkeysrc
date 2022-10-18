@@ -46,7 +46,7 @@
     Print 
 
 #Take screenshot and save immidiately
-"gscreenshot -f ~/Pictures/Screenshots"
+"escrotum '/home/kurosaki/Pictures/Screenshots/%Y-%m-%d-%H%M%S_$wx$h_escrotum.png'"
     m:0x41 + c:107
     Shift+Mod4 + Print 
 
