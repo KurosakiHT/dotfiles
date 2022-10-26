@@ -6,6 +6,7 @@ export CLUTTER_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
 export QT_QPA_PLATFORMTHEME=gtk2
 export EDITOR=nvim
+export Xcursor.theme: Quintom_Ink
 lxpolkit &
 picom --experimental-backend &
 nitrogen --restore &
@@ -17,3 +18,5 @@ xfce4-power-manager &
 manjaroptimus-appindicator &
 nm-applet &
 gnome-keyring-daemon -d &
+parcellite &
+/home/kurosaki/.color/color-calibrate.sh
