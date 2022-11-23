@@ -19,4 +19,6 @@ manjaroptimus-appindicator &
 nm-applet &
 gnome-keyring-daemon -d &
 parcellite &
+aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all --rpc-secret=sacmaidich &
 /home/kurosaki/.color/color-calibrate.sh
+/opt/nvidia-switch/open_nvidia_session.sh
