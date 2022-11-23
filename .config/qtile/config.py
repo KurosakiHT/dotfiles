@@ -130,6 +130,12 @@ widget_defaults = dict(
     background='#2e3440'
 )
 extension_defaults = widget_defaults.copy()
+Sep = widget.Sep(
+    foreground='81a1c1',
+    linewidth=2,
+    padding=4,
+    size_percent=60,
+)
 
 screens = [
     Screen(
@@ -139,6 +145,7 @@ screens = [
                     inactive='81a1c1',
                     hide_unused=True,
                     rounded=True,
+                    font='JetBrainsMono Nerd Font',
                     this_current_screen_border='88c0d0',
                     this_screen_border='88c0d0',
                 ),
@@ -146,15 +153,11 @@ screens = [
                     active_color='a3be8c',
                     inactive_color='bf616a',
                 ),
-                widget.Sep(
-                    foreground='81a1c1',
-                    linewidth=2,
-                    padding=4,
-                    size_percent=60,
-                ),
+                Sep,
                 widget.Prompt(),
                 widget.TaskList(
                     border='8cc0d0',
+                    font='JetBrainsMono Nerd Font',
                     unfocused_border='3b4252',
                     borderwidth=3,
                     txt_floating='🗗 ',
@@ -162,87 +165,46 @@ screens = [
                     txt_minimized='🗕 ',
                 ),
                 widget.Systray(),
-                widget.Sep(
-                    foreground='81a1c1',
-                    linewidth=2,
-                    padding=4,
-                    size_percent=60,
-                ),
+                Sep,
                 widget.CurrentLayoutIcon(
                     scale=0.6,
                 ),
-                widget.Sep(
-                    foreground='81a1c1',
-                    linewidth=2,
-                    padding=4,
-                    size_percent=60,
-                ),
-                widget.CPU(
-                    format='CPU U/T {load_percent}%',
-                ),
+                Sep,
                 widget.ThermalSensor(
                     threshold=70,
-                    tag_sensor='Core 0',
+                    tag_sensor='Composite',
                     foreground_alert='f7768e',
+                    format='TEMP {temp:.1f}{unit}',
                 ),
-                widget.Sep(
-                    foreground='81a1c1',
-                    linewidth=2,
-                    padding=4,
-                    size_percent=60,
+                Sep,
+                widget.CPU(
+                    format='CPU {load_percent}%',
                 ),
-                widget.NvidiaSensors(
-                    format='GPU T {temp}°C',
-                    foreground_alert='f7768e',
-                ),
-                widget.Sep(
-                    foreground='81a1c1',
-                    linewidth=2,
-                    padding=4,
-                    size_percent=60,
-                ),
+                Sep,
                 widget.Memory(
                     format='MEM {MemUsed: .2f}{mm}/{MemTotal: .0f}{mm}',
                     measure_mem='G',
                 ),
-                widget.Sep(
-                    foreground='81a1c1',
-                    linewidth=2,
-                    padding=4,
-                    size_percent=60,
-                ),
-               widget.Backlight(
+                Sep,
+                widget.Backlight(
                     backlight_name='intel_backlight',
                     format='BL {percent:2.0%}',
                     step=1,
                 ),
-                widget.Sep(
-                    foreground='81a1c1',
-                    linewidth=2,
-                    padding=4,
-                    size_percent=60,
-                ),
+                Sep,
                 widget.Volume(
                     update_interval=0.05,
+                    step=1,
                     fmt='VOL {}',
                 ),
-                widget.Sep(
-                    foreground='81a1c1',
-                    linewidth=2,
-                    padding=4,
-                    size_percent=60,
-                ),
+                Sep,
                 widget.Battery(
-                    format='BAT {char} {percent:2.0%}',
+                    format='BAT {char} {percent:2.0%} {watt:.2f}W',
                     low_percentage=0.15,
                     low_foreground='bf616a',
+                    update_interval=15,
                 ),
-                widget.Sep(
-                    foreground='81a1c1',
-                    linewidth=2,
-                    padding=4,
-                    size_percent=60,
-                ),
+                Sep,
                 widget.Clock(
                     format='%Y/%m/%d %a %H:%M:%S',
                 ),
@@ -280,6 +242,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='pqiv'),
     Match(wm_class='zoom'),
     Match(wm_class='megasync'),
+    Match(wm_class='xdman'),
     ], **layout_theme)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
