@@ -124,7 +124,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='JetBrainsMono Nerd Font ExtraBold',
+    font='JetBrainsMono ExtraBold',
     fontsize=12,
     padding=2,
     background='#2e3440'
@@ -145,7 +145,6 @@ screens = [
                     inactive='81a1c1',
                     hide_unused=True,
                     rounded=True,
-                    font='JetBrainsMono Nerd Font',
                     this_current_screen_border='88c0d0',
                     this_screen_border='88c0d0',
                 ),
@@ -157,7 +156,6 @@ screens = [
                 widget.Prompt(),
                 widget.TaskList(
                     border='8cc0d0',
-                    font='JetBrainsMono Nerd Font',
                     unfocused_border='3b4252',
                     borderwidth=3,
                     txt_floating='🗗 ',

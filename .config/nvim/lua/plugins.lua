@@ -5,7 +5,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Simple plugins can be specified as strings
-  use '9mm/vim-closer'
+  use 'rstacruz/vim-closer'
 
   -- Smart completion and syntax check plus LSP
   use {'neoclide/coc.nvim', branch = 'release'}
@@ -27,9 +27,6 @@ return require('packer').startup(function()
 
   --Matchup command
   use 'andymass/vim-matchup'
-
-  --Syntax highlighting with vim-matchup intergrated
-  use 'nvim-treestter/nvim-treesitter'
 
   --File system explorer
   use {'preservim/nerdtree',

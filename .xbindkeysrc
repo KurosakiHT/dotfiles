@@ -40,7 +40,7 @@
     m:0x41 + c:54
     Shift+Mod4 + c 
 
-#Take screenshot
+#Take screenshot and copy to clipboard
 "escrotum -C"
     m:0x0 + c:107
     Print 
@@ -50,7 +50,7 @@
     m:0x41 + c:107
     Shift+Mod4 + Print 
 
-#Take screenshot of an area
+#Take screenshot of an area and copy to clipboard
 "escrotum -s -C"
     m:0x1 + c:107
     Shift + Print 
