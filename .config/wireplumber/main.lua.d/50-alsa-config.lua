@@ -7,7 +7,6 @@ alsa_monitor.properties = {
   --["alsa.jack-device"] = false,
 
   -- Reserve devices via org.freedesktop.ReserveDevice1 on D-Bus
-  ["alsa.reserve"] = true,
   ["alsa.reserve"] = false,
   --["alsa.reserve.priority"] = -20,
   --["alsa.reserve.application-name"] = "WirePlumber",
