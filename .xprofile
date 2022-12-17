@@ -7,6 +7,7 @@ export GLFW_IM_MODULE=ibus
 export QT_QPA_PLATFORMTHEME=gtk2
 export EDITOR=nvim
 export Xcursor.theme: Quintom_Ink
+export MAKEFLAGS=-j$(($(grep -c "^processor" /proc/cpuinfo) - 1))
 lxpolkit &
 picom --experimental-backend &
 nitrogen --restore &
@@ -18,5 +19,6 @@ ibus-daemon -drx
 xfce4-power-manager &
 nm-applet &
 parcellite &
+optimus-manager-qt &
 aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all --rpc-secret=sacmaidich &
 /home/kurosaki/.color/color-calibrate.sh
