@@ -40,18 +40,13 @@
     m:0x41 + c:54
     Shift+Mod4 + c 
 
-#Take screenshot and copy to clipboard
-"escrotum -C"
+#Take screenshot and save
+"flameshot screen"
     m:0x0 + c:107
     Print 
 
-#Take screenshot and save immidiately
-"escrotum '/home/kurosaki/Pictures/Screenshots/%Y-%m-%d-%H%M%S_$wx$h_escrotum.png'"
-    m:0x41 + c:107
-    Shift+Mod4 + Print 
-
-#Take screenshot of an area and copy to clipboard
-"escrotum -s -C"
+#Take screenshot of an area
+"flameshot gui"
     m:0x1 + c:107
     Shift + Print 
 
