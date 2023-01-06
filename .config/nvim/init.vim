@@ -9,7 +9,7 @@
 :set mouse=a
 :set termguicolors
 
-autocmd VimEnter * colorscheme nordfox
+autocmd VimEnter * colorscheme catppuccin
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -23,11 +23,17 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- mandatory, false will disable the whole extension
   },
 }
-
+require("catppuccin").setup({
+    flavour = "frappe", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "frappe",
+    },
+})
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'nordfox',
+	theme = 'catppuccin',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},

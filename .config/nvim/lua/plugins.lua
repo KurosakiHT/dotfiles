@@ -63,8 +63,8 @@ return require('packer').startup(function()
   --Line number
   use 'IMOKURI/line-number-interval.nvim'
 
-  --Nightfox colorscheme
-  use 'EdenEast/nightfox.nvim'
+  --Catppuccin colorscheme
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   --CSS colors
   use 'ap/vim-css-color'

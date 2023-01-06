@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/coc.nvim",
@@ -118,11 +123,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nerdtree-project-plugin",
     url = "https://github.com/scrooloose/nerdtree-project-plugin"
-  },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/home/kurosaki/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
