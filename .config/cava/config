@@ -122,18 +122,15 @@
 # background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
  gradient = 1
- gradient_count = 5
-; gradient_color_1 = '#b48ead'
- gradient_color_1 = '#81a1c1'
- gradient_color_2 = '#88c0d0'
- gradient_color_3 = '#a3be8c'
- gradient_color_4 = '#ebcb8b'
- gradient_color_5 = '#bf616a'
-; gradient_color_7 = '#cc8033'
-; gradient_color_8 = '#cc5933'
-; gradient_color_9 = '#cc3333'
 
-
+gradient_color_1 = '#81c8be'
+gradient_color_2 = '#99d1db'
+gradient_color_3 = '#85c1dc'
+gradient_color_4 = '#8caaee'
+gradient_color_5 = '#ca9ee6'
+gradient_color_6 = '#f4b8e4'
+gradient_color_7 = '#ea999c'
+gradient_color_8 = '#e78284'
 
 [smoothing]
 
