@@ -1,9 +1,12 @@
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+
+import os
+import subprocess
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -73,8 +76,14 @@ keys = [
         desc='toggle floating'),
     Key(
         [mod, "mod1"], "Return", lazy.window.toggle_fullscreen(),
-        desc="toggle fullscreen"
-    )
+        desc="toggle fullscreen"),
+    Key(["mod1"], "space", lazy.spawn("rofi -show drun"), desc="rofi launcher"),
+    Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle"),
+        desc="mute audio"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -3000"), desc="decrese volume"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +3000"), desc="increase volume"),
+    Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc="take screenshot"),
+    Key([], "XF86TouchpadToggle", lazy.spawn("/home/kurosaki/.config/qtile/toggle-touchpad.sh"), desc="toggle touchpad"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -97,8 +106,8 @@ for i in groups:
     ])
 
 layout_theme = {
-    "border_focus": "88c0d0",
-    "border_normal": "3b4252",
+    "border_focus": "f2d5cf",
+    "border_normal": "737994",
     "border_width": 3
 }
 
@@ -127,11 +136,11 @@ widget_defaults = dict(
     font='JetBrainsMono ExtraBold',
     fontsize=12,
     padding=2,
-    background='#2e3440'
+    background='#303446'
 )
 extension_defaults = widget_defaults.copy()
 Sep = widget.Sep(
-    foreground='81a1c1',
+    foreground='#babbf1',
     linewidth=2,
     padding=4,
     size_percent=60,
@@ -139,26 +148,31 @@ Sep = widget.Sep(
 
 screens = [
     Screen(
+        #wallpaper config
+        wallpaper="~/.themes/wp/aroplana.png",
+        wallpaper_mode="fill",
         top=bar.Bar(
             [
                 widget.GroupBox(
-                    inactive='81a1c1',
+                    inactive='737994',
                     hide_unused=True,
                     rounded=True,
-                    this_current_screen_border='88c0d0',
-                    this_screen_border='88c0d0',
+                    this_current_screen_border='f2d5cf',
+                    this_screen_border='babbf1',
                 ),
                 widget.CurrentScreen(
-                    active_color='a3be8c',
-                    inactive_color='bf616a',
+                    active_color='a6d189',
+                    inactive_color='e78284',
                 ),
                 Sep,
-                widget.Prompt(),
+                widget.Prompt(
+                    prompt='Launch: ',
+                ),
                 widget.TaskList(
-                    border='8cc0d0',
-                    unfocused_border='3b4252',
+                    border='f2d5cf',
+                    unfocused_border='737994',
                     borderwidth=3,
-                    txt_floating='🗗 ',
+                     txt_floating='🗗 ',
                     txt_maximized='🗖 ',
                     txt_minimized='🗕 ',
                 ),
@@ -171,7 +185,7 @@ screens = [
                 widget.ThermalSensor(
                     threshold=70,
                     tag_sensor='Composite',
-                    foreground_alert='f7768e',
+                    foreground_alert='e78284',
                     format='TEMP {temp:.1f}{unit}',
                 ),
                 Sep,
@@ -199,7 +213,7 @@ screens = [
                 widget.Battery(
                     format='BAT {char} {percent:2.0%} {watt:.2f}W',
                     low_percentage=0.15,
-                    low_foreground='bf616a',
+                    low_foreground='e78284',
                     update_interval=15,
                 ),
                 Sep,
@@ -241,6 +255,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='zoom'),
     Match(wm_class='megasync'),
     Match(wm_class='xdman'),
+    Match(wm_class='jdownloader'),
     ], **layout_theme)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
@@ -250,6 +265,12 @@ reconfigure_screens = True
 # focus, should we respect this or not?
 auto_minimize = True
 
+#autostart hook
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.Popen([home])
+
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
 # mailing lists, GitHub issues, and other WM documentation that suggest setting
@@ -258,4 +279,4 @@ auto_minimize = True
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "Qtile"
+wmname = "LG3D"
