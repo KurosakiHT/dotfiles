@@ -1,8 +1,7 @@
 #!/bin/bash
-ibus-daemon -drx &
+fcitx5 &
 picom &
-xfce4-power-manager &
-xcalib ~/.themes/Nitro5_03.icm &
+xcalib ~/.themes/Asus_X456UAK.icm &
 lxpolkit &
 nm-applet &
 light-locker &

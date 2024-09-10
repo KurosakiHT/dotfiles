@@ -106,7 +106,7 @@ for i in groups:
     ])
 
 layout_theme = {
-    "border_focus": "f2d5cf",
+    "border_focus": "a6d189",
     "border_normal": "737994",
     "border_width": 3
 }
@@ -133,7 +133,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='JetBrainsMono ExtraBold',
+    font='monospace',
     fontsize=12,
     padding=2,
     background='#303446'
@@ -157,7 +157,7 @@ screens = [
                     inactive='737994',
                     hide_unused=True,
                     rounded=True,
-                    this_current_screen_border='f2d5cf',
+                    this_current_screen_border='a6d189',
                     this_screen_border='babbf1',
                 ),
                 widget.CurrentScreen(
@@ -169,7 +169,7 @@ screens = [
                     prompt='Launch: ',
                 ),
                 widget.TaskList(
-                    border='f2d5cf',
+                    border='a6d189',
                     unfocused_border='737994',
                     borderwidth=3,
                      txt_floating='🗗 ',
@@ -180,13 +180,6 @@ screens = [
                 Sep,
                 widget.CurrentLayoutIcon(
                     scale=0.6,
-                ),
-                Sep,
-                widget.ThermalSensor(
-                    threshold=70,
-                    tag_sensor='Composite',
-                    foreground_alert='e78284',
-                    format='TEMP {temp:.1f}{unit}',
                 ),
                 Sep,
                 widget.CPU(
