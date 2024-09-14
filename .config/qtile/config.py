@@ -149,7 +149,7 @@ Sep = widget.Sep(
 screens = [
     Screen(
         #wallpaper config
-        wallpaper="~/.themes/wp/aroplana.png",
+        wallpaper="~/.themes/kotoseduce.jpg",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
@@ -180,6 +180,10 @@ screens = [
                 Sep,
                 widget.CurrentLayoutIcon(
                     scale=0.6,
+                ),
+                Sep,
+                widget.CapsNumLockIndicator(
+                    update_interval=0.1
                 ),
                 Sep,
                 widget.CPU(
